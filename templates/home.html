@@ -1,0 +1,16 @@
+{% extends 'base.html'%} {% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Hello, Welcome to our Pollster App</h1>
+  <p class="lead">
+    This is a simple polls app, where you can view polls, vote in each poll and
+    then view the results
+  </p>
+  <hr class="my-4" />
+  <p>click on the button bellow to view all the polls in the database</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'polls'%}" role="button"
+      >View all the polls</a
+    >
+  </p>
+</div>
+{% endblock %}%}

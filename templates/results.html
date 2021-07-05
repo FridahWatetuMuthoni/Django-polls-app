@@ -1,0 +1,15 @@
+{% extends 'base.html'%} {% block content%} 
+<h1 style="text-align:center">Results</h1>
+<h3><a href="{% url 'polls'%}">Return back to polls</a></h3>
+<div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{question.question_text}}</h5>
+      <small>{{question.date_created}}</small>
+</div>
+<ul class="list-group">
+    {%for choice in question.choice_set.all%}
+        <li class="list-group-item d-flex justify-content-between align-items-center">{{choice.choice_text}}
+    <span class="badge badge-primary badge-pill">{{choice.vote}}</span>
+  </li>
+    {%endfor%}
+</ul>
+{% endblock%}

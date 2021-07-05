@@ -1,0 +1,22 @@
+{% extends 'base.html'%} {% block content%}
+<div class="container">
+  <div class="list-group">
+    {% for question in questions %}
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Question {{forloop.counter}}</h5>
+        <p class="card-text">{{question.question_text}}</p>
+        <a href="{% url 'vote' question.id %}" class="card-link"
+          ><button type="button" class="btn btn-primary">Vote</button></a
+        >
+        <a href="{% url 'results' question.id %}" class="card-link"
+          ><button type="button" class="btn btn-primary">
+            View Results
+          </button></a
+        >
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+</div>
+{% endblock%}
